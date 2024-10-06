@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Session Planning & Reflection Sheet</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tab.css">
+  <link rel="stylesheet" href="css/mobile.css">
+
+
+  <link rel="shortcut icon" href="images/favicon.png" />
+
+  <script src="components/sidebar.js" type="text/javascript" defer></script>
+  <script src="components/topnav.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+  <div class="container-scroller">
+
+    <topnav-component></topnav-component>
+
+    <div class="container-fluid page-body-wrapper">
+      <sidebar-component data-page="Session-planning"></sidebar-component>
+
+      <div class="main-panel session-plan">
+        <h2 class="main-heading m-0">Session Planning & Reflection Sheet</h2>
+        <h5 class="course-count">Total Courses- <span>3</span></h5>
+        <table class="session-table">
+          <thead>
+            <tr>
+              <td>Course</td>
+              <td>Batch</td>
+              <td>Days</td>
+              <td>Players</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="single-session.html">Fundamentals of Cricket</a></td>
+              <td>10.00am-11:00am</td>
+              <td>Weekly,Mon-Tue-Wed</td>
+              <td>20</td>
+            </tr>
+            <tr>
+              <td>Fielding and Fitness</td>
+              <td>11.00am-12:00pm</td>
+              <td>Weekly,Tue-Wed-Fri</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Wicketkeeping</td>
+              <td>03.00pm-04:00pm</td>
+              <td>Weekly,Tue-Fri</td>
+              <td>26</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="modal fade " id="new_coach">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header align-items-center">
+
+          <h5 class="modal-title" id="coachModalLabel">New Coach</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="max-height: calc(100vh - 180px); overflow: auto;">
+
+          <div class="accordion">Personal information</div>
+          <div class="row panel" style="row-gap:20px">
+            <div class="col-12 mb-3">
+              <h5 class="text-center pb-1">Profile Photo</h5>
+              <div class="profile-dp mx-auto" style="border: 1px dashed #0000004A; width:90px; height:90px; border-radius: 50%; display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                gap: 10px;">
+                <img src="images/download.png">
+                <h5 class="text-success m-0">Upload</h5>
+                <input type="file" name="">
+              </div>
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">First name</h6>
+              <input type="" placeholder="Enter coach name" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Last name</h6>
+              <input type="" placeholder="Enter Last name" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Date of birth</h6>
+              <input type="date" class="hwzthat-input2 w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Gender</h6>
+              <div class="">
+                <select class="classic">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Email ID</h6>
+              <input type="email" placeholder="Enter email id" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Contact number</h6>
+              <input type="" placeholder="Enter contact number" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Emergency Contact Number</h6>
+              <input type="" placeholder="Enter Emergency Contact Number" name="" class="hwzthat-input w-100">
+            </div>
+
+          </div>
+          <div class="accordion">Address</div>
+
+          <div class="row panel" style="row-gap:20px">
+
+            <div class="col-6">
+              <h6 class="mb-2 required">Street Address</h6>
+              <input type="" placeholder="Enter street address" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2">Apartment, Suite, or Unit Number </h6>
+              <input type="" placeholder="Enter Apartment, Suite, or Unit Number" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">City</h6>
+              <input type="" placeholder="Enter city" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">State/Province</h6>
+              <input type="" placeholder="Enter State/Province" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Postal Code/Zip Code</h6>
+              <input type="" placeholder="Enter Postal Code/Zip Code" name="" class="hwzthat-input w-100">
+            </div>
+
+            <div class="col-6">
+              <h6 class="mb-2 required">Country</h6>
+              <div class="">
+                <select class="classic">
+                  <option>select country</option>
+                  <option>India</option>
+                  <option>Australia</option>
+                </select>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="accordion">Category</div>
+
+          <div class="row panel" style="row-gap:20px">
+
+
+            <div class="col-12">
+              <h6 class="mb-2 required">Add to category</h6>
+              <div class="">
+                <select class="classic">
+                  <option>Select category</option>
+                  <option>category1</option>
+                </select>
+              </div>
+            </div>
+
+
+          </div>
+          <div class="accordion">Cricket information</div>
+
+          <div class="row panel" style="row-gap:20px">
+
+            <div class="col-6">
+              <h6 class="mb-2 required">Coaching certifications</h6>
+              <input type="" placeholder="Enter Coaching certifications" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Batting style</h6>
+              <div class="">
+                <select class="classic">
+                  <option>Right hand</option>
+                  <option>Left hand</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Bowling style</h6>
+              <div class="">
+                <select class="classic">
+                  <option>Spin</option>
+                  <option>Fast</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Cricinfo link</h6>
+              <input type="" placeholder="Enter Coaching certifications" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Teams played</h6>
+              <div class="">
+                <select class="classic">
+                  <option>1</option>
+                  <option>2</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Primary Language(s) used for coaching</h6>
+              <div class="">
+                <select class="classic">
+                  <option>English</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Additional language</h6>
+              <input type="" placeholder="English" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Preferred category to train</h6>
+              <div class="">
+                <select class="classic">
+                  <option>Beginner</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Coaching specialization</h6>
+              <div class="">
+                <select class="classic">
+                  <option>All</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <h6 class="mb-2 required">Tell us about yourself</h6>
+              <textarea type="" name="" class="hwzthat-input w-100" style="min-height: 100px;"></textarea>
+            </div>
+
+
+          </div>
+
+        </div>
+        <div class="d-flex align-items-center mt-3 p-3" style="gap:10px;gap: 10px;justify-content: flex-end;">
+          <button class="site-btn-outline-info hoverbtn px-5" data-dismiss="modal" aria-label="Close">Cancel</button>
+          <button class="site-btn-success hoverbtn px-5 disabled">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal fade " id="invite_coach">
+    <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+        <div class="modal-header align-items-center">
+
+          <h5 class="modal-title" id="coachModalLabel">Invite coach</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" style="max-height: calc(100vh - 180px); overflow: auto;">
+
+          <div class="row" style="row-gap:20px">
+
+            <div class="col-6">
+              <h6 class="mb-2 required">First name</h6>
+              <input type="" placeholder="Enter coach name" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Last name</h6>
+              <input type="" placeholder="Enter Last name" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Email ID</h6>
+              <input type="email" placeholder="Enter email id" name="" class="hwzthat-input w-100">
+            </div>
+            <div class="col-6">
+              <h6 class="mb-2 required">Gender</h6>
+              <div class="">
+                <select class="classic">
+                  <option>Male</option>
+                  <option>Female</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="d-flex align-items-center mt-3 p-3" style="gap:10px;gap: 10px;justify-content: flex-end;">
+          <button class="site-btn-outline-info hoverbtn px-5" data-dismiss="modal" aria-label="Close">Cancel</button>
+          <button class="site-btn-success hoverbtn px-5 disabled">Invite</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal fade " id="new_category">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header align-items-center">
+
+          <h5 class="modal-title" id="coachModalLabel">New category</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div>
+            <h6 class="mb-2">Category name</h6>
+            <input type="" placeholder="Enter batch name" name="" class="hwzthat-input w-100">
+          </div>
+          <div class="flex-align g2 py-4">
+            <div class="flex-align2 g4">
+              <h6 class="text-gray" style="font-size: 12px;">Total students : <span
+                  class="font-weight-600 text-dark">150</span></h6>
+              <h6 class="text-gray" style="font-size: 12px;">Selected : <span class="font-weight-600 text-dark">0</span>
+              </h6>
+
+            </div>
+            <div class="top-search">
+              <img src="images/search.png" class="icon1" style="right: auto; left: 15px;">
+              <input type="" name="" class="hwzthat-input w-100 pl-5" placeholder="search students">
+            </div>
+          </div>
+          <div class="row m-0" style="max-height: calc(100vh - 330px); overflow: auto;">
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category2" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category2" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category3" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category3" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category4" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category4" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category2" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category2" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category3" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category3" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category4" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category4" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category2" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category2" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category3" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category3" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category4" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category4" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category2" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category2" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category3" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category3" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+            <div class="col-md-6 col-lg-4 p-1">
+              <label for="new-category4" class="p-2 bg-white rounded d-block card-shadow border">
+                <div class="dp-name">
+                  <img src="images/user3.png" class="dp-1">
+                  <div>
+                    <h5 class="font-weight-600 mb-1">Coach name S</h5>
+                    <h6 class="m-0 h6">coach name 1@11gmail.com</h6>
+                  </div>
+                  <div class="radio-check">
+                    <input id="new-category4" type="checkbox" name="new-category">
+                    <span class="custom-radio"></span>
+                  </div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center p-3" style="gap:10px;gap: 10px;justify-content: flex-end;">
+          <button class="site-btn-outline-info hoverbtn px-5" data-dismiss="modal" aria-label="Close">Cancel</button>
+          <button class="site-btn-success hoverbtn px-5 disabled">Save</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+  <script src="js/off-canvas.js"></script>
+  <script src="js/template.js"></script>
+
+
+  <script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "flex") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "flex";
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

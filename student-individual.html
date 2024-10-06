@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Coach Workstation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tab.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/text-editor.css">
+    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <script src="components/sidebar.js" type="text/javascript" defer></script>
+    <script src="components/topnav.js" type="text/javascript" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/api-calls.js" type="text/javascript" defer></script>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal.open {
+            display: block;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .upload-options button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <topnav-component></topnav-component>
+
+        <div class="container-fluid page-body-wrapper">
+            <sidebar-component data-page="Coach-Workstation"></sidebar-component>
+
+            <div class="main-panel coach-workstation">
+                <div class="title">
+                    <a href="coach-workstation.html" class="back">Coach Workstation</a>
+                    <h2 class="main-heading m-0">Student name 1</h2>
+                </div>
+                <div class="full-view">
+                    <div class="left-profile">
+                        <div class="profile">
+                            <h3>Student name 1</h3>
+                            <p>studentname1@gmail.com</p>
+                        </div>
+                        <div class="buttons">
+                            <button><img src="images/chat-btn.png" alt="">Chat now</button>
+                            <button><img src="images/meeting.png" alt="">Schedule meeting</button>
+                        </div>
+                        <div class="accordion2 flex-align mb-1 cursor-pointer border-bottom pb-2 mt-4">
+                            <h5 class="font-weight-500" style="font-size: 14px;">Profile details</h5>
+                            <img src="images/arrow-down3.png" style="width: 10px; transform: rotate(-90deg);">
+                        </div>
+                        <div class="panel" style="display: none;">
+                            <h6 style="font-size: 12px; line-height: 20px; color: #000;">Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Sed consectetur sem id porttitor tempor. Nunc sodales,
+                                neque nec hendrerit consequat, mauris elit euismod.</h6>
+                        </div>
+                    </div>
+                    <div class="right-content">
+                        <ul class="nav nav-pills side-tab-pills mt-2" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="assignment-tab" data-toggle="pill" href="#assignment"
+                                    role="tab" aria-controls="assignment" aria-selected="true">Assignment</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="courses-tab" data-toggle="pill" href="#courses" role="tab"
+                                    aria-controls="courses" aria-selected="false">Courses</a>
+                            </li>
+                            <!-- Add other tabs as needed -->
+                        </ul>
+                        <div class="tab-content w-100 mt-1" id="pills-tabContent">
+                            <!-- Assignments Tab -->
+                            <div class="tab-pane fade show active" id="assignment" role="tabpanel"
+                                aria-labelledby="assignment-tab">
+                                <div class="assignment">
+                                    <div class="top-clicks">
+                                        <a href="#" id="create-assignment-btn" class="create-new"><span>+</span>Create new assignment</a>
+                                        <div class="selects">
+                                            <select class="hwzthat-input w-100" name="">
+                                                <option value="Yearly">All year</option>
+                                                <option value="Monthly">Monthly</option>
+                                                <option value="Quarterly">Quarterly</option>
+                                                <option value="Yearly">Yearly</option>
+                                            </select>
+                                            <select class="hwzthat-input w-100" name="">
+                                                <option value="2024">2024</option>
+                                                <option value="2023">2023</option>
+                                                <option value="2022">2022</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="small-text">
+                                        <p>Total - <span id="total-assignments">0</span></p>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Assignment title</th>
+                                                <th>Assigned date</th>
+                                                <th>Read date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="assignments-list">
+                                            <!-- Assignments will be inserted here dynamically -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <!-- Courses Tab -->
+                            <div class="tab-pane fade" id="courses" role="tabpanel" aria-labelledby="courses-tab">
+                                <div class="courses">
+                                    <div class="course-summary">
+                                        <div class="course-info">
+                                            <p>Courses: <span id="total-courses">0</span></p>
+                                            <p>Active courses: <span id="active-courses">0</span></p>
+                                            <p>Completed courses: <span id="completed-courses">0</span></p>
+                                        </div>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Course name</th>
+                                                <th>Duration</th>
+                                                <th>Start date</th>
+                                                <th>Status</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="courses-list">
+                                            <!-- Courses will be inserted here dynamically -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Assignment Modal -->
+        <div id="create-assignment-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" id="close-create-assignment-modal">&times;</span>
+                <h2>Create New Assignment</h2>
+                <div class="form-group">
+                    <label>Select students/Batch:</label>
+                    <select id="select-student-batch">
+                        <!-- Options to be populated dynamically -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Assignment Title:</label>
+                    <input type="text" id="assignment-title" placeholder="Enter assignment title">
+                </div>
+                <div class="form-group">
+                    <label>Assignment Details:</label>
+                    <textarea id="assignment-details"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Attachments:</label>
+                    <div class="upload-options">
+                        <button id="record-audio">Record Audio</button>
+                        <button id="record-video">Record Video</button>
+                        <button id="attach-file">Attach from Device</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button id="submit-create-assignment">Create Assignment</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Fetch data on page load
+        fetchAssignments();
+        fetchCourses();
+
+        // Event listeners for modals and buttons
+        document.getElementById('create-assignment-btn').addEventListener('click', openCreateAssignmentModal);
+        document.getElementById('close-create-assignment-modal').addEventListener('click', closeCreateAssignmentModal);
+        document.getElementById('submit-create-assignment').addEventListener('click', createAssignment);
+
+        // Event listeners for attachment options
+        document.getElementById('record-audio').addEventListener('click', function () {
+            alert('Record Audio feature coming soon.');
+        });
+
+        document.getElementById('record-video').addEventListener('click', function () {
+            alert('Record Video feature coming soon.');
+        });
+
+        document.getElementById('attach-file').addEventListener('click', function () {
+            alert('Attach File feature coming soon.');
+        });
+    });
+
+    function getAccessToken() {
+        return localStorage.getItem('accessToken');
+    }
+
+    function fetchAssignments() {
+        fetch('https://hwzthat.com/api/view_assignments_api?id=59', {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + getAccessToken()
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const assignmentsList = document.getElementById('assignments-list');
+                assignmentsList.innerHTML = '';
+
+                if (data.result && data.result.data) {
+                    data.result.data.forEach(assignment => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td><a href="#" onclick="openAssignmentModal(${assignment.id})">${assignment.title}</a></td>
+                            <td>${assignment.created_at}</td>
+                            <td>${assignment.date_of_review || '-'}</td>
+                            <td>${assignment.assignment_status}</td>
+                        `;
+                        assignmentsList.appendChild(row);
+                    });
+                    document.getElementById('total-assignments').innerText = data.result.data.length;
+                }
+            })
+            .catch(error => console.error('Error fetching assignments:', error));
+    }
+
+    function openAssignmentModal(assignmentId) {
+        fetch(`https://hwzthat.com/api/view_assignments_api?id=${assignmentId}`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + getAccessToken()
+            }
+        })
+            .then(response => response.json())
+            .then(data => {
+                const titleElement = document.getElementById('assignment-modal-title');
+                const descriptionElement = document.getElementById('assignment-modal-description');
+
+                if (titleElement && descriptionElement) {
+                    titleElement.innerText = data.result.masterdata?.title || 'No Title Available';
+                    descriptionElement.innerText = data.result.masterdata?.description || 'No Description Available';
+                    document.getElementById('assignment-modal').classList.add('open');
+                } else {
+                    console.error("Modal elements not found");
+                }
+            })
+            .catch(error => console.error('Error opening assignment modal:', error));
+    }
+
+    function createAssignment() {
+        const title = document.getElementById('assignment-title').value;
+        const details = document.getElementById('assignment-details').value;
+        const studentBatch = document.getElementById('select-student-batch').value;
+
+        fetch('https://hwzthat.com/api/create_assignment_form_api', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + getAccessToken(),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                inputs: {
+                    title,
+                    details,
+                    studentBatch
+                }
+            })
+        })
+            .then(response => response.json())
+            .then(data => {
+                alert('Assignment created successfully');
+                closeCreateAssignmentModal();
+                fetchAssignments();
+            })
+            .catch(error => console.error('Error creating assignment:', error));
+    }
+
+    function fetchCourses() {
+        fetch('https://hwzthat.com/api/all-course-list', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Authorization': 'Bearer ' + getAccessToken(),
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({})
+        })
+            .then(response => response.json())
+            .then(data => {
+                const coursesList = document.getElementById('courses-list');
+                coursesList.innerHTML = '';
+
+                if (data.result && data.result.data) {
+                    let activeCount = 0;
+                    let completedCount = 0;
+
+                    data.result.data.forEach(course => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${course.title}</td>
+                            <td>${course.duration || 'N/A'}</td>
+                            <td>${course.start_date}</td>
+                            <td>${course.status}</td>
+                        `;
+                        coursesList.appendChild(row);
+
+                        if (course.status === 'active') {
+                            activeCount++;
+                        } else if (course.status === 'completed') {
+                            completedCount++;
+                        }
+                    });
+
+                    document.getElementById('total-courses').innerText = data.result.data.length;
+                    document.getElementById('active-courses').innerText = activeCount;
+                    document.getElementById('completed-courses').innerText = completedCount;
+                }
+            })
+            .catch(error => console.error('Error fetching courses:', error));
+    }
+
+    function openCreateAssignmentModal() {
+        document.getElementById('create-assignment-modal').classList.add('open');
+    }
+
+    function closeCreateAssignmentModal() {
+        document.getElementById('create-assignment-modal').classList.remove('open');
+    }
+</script>
+
+</html>

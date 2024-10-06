@@ -1,0 +1,22 @@
+@media only screen and (max-width:380px){
+    .student-goals .goal-tab-container .goal-content .chat-input .icons{
+        gap:0;
+    }
+    .student-goals .goal-tab-container .goal-content .chat-input .icons img{
+        width:14px;
+    }
+    .student-goals .goal-tab-container .goal-content .chat-input .icons .share img{
+        width:12px;
+    }
+    .student-goals .goal-tab-container .goal-content .chat-input .icons .share{
+        width:30px;
+        height: 30px;
+    }
+    .student-goals .goal-tab-container .goal-content .chat-input input{
+        width:55%;
+    }
+    .student-goals .goal-tab-container .goal-content .chat-input input::placeholder{
+        font-size: 10px;
+    }
+
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Courses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/tab.css">
+    <link rel="shortcut icon" href="images/1.png" />
+    <script src="components/sidebar.js" type="text/javascript" defer></script>
+    <script src="components/topnav.js" type="text/javascript" defer></script>
+    <script src="js/dynamic-content.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <topnav-component></topnav-component>
+        <div class="container-fluid page-body-wrapper">
+            <sidebar-component data-page="courses"></sidebar-component>
+            <div class="course-main">
+                <div class="mb-3 mt-2">
+                    <h4 class="m-0" style="font-weight: 650;">Course</h4>
+                </div>
+                <div class="row coaches-dropdown align-items-end m-0"
+                    style="row-gap:15px;justify-content: space-between;">
+                    <div class="pl-0">
+                        <h6 class="text-gray package-count" style="font-size: 14px;">Total Courses :
+                            <span id="total-courses">0</span>
+                        </h6>
+                        <h6 class="text-gray package-count" style="font-size: 14px;">Packages :
+                            <span id="total-packages">0</span>
+                        </h6>
+                    </div>
+                    <div class="dropdown" style="padding: 0 6px;">
+                        <button class="btn site-btn-success dropdown-btn2" type="button" id="dropdownMenuDate2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                            style="font-size: 15px; white-space: nowrap;font-weight: 500;">
+                            <span>+</span> Create new <img src="images/arrow-down3.png"
+                                style="filter: invert(1);height: 6px;margin-top: 1px;">
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right p-0" aria-labelledby="dropdownStudent">
+                            <a href="new-course.html" class="dropdown-item">Course</a>
+                            <a class="dropdown-item" data-toggle="modal" data-target="#add-package">Add Package</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="radios">
+                    <label for="all"><input name="radio" type="radio" id="all" checked>All</label>
+                    <label for="active"><input name="radio" type="radio" id="active">Active</label>
+                    <label for="not-assigned"><input name="radio" type="radio" id="not-assigned">Not assigned</label>
+                    <label for="expired"><input name="radio" type="radio" id="expired">Expired</label>
+                </div>
+                <div class="package-container" id="course-container">
+                    <!-- Courses will be dynamically inserted here by JavaScript -->
+                </div>
+                <div class="package-heading">
+                    <h4>Packages</h4>
+                </div>
+                <div class="package-container" id="package-container">
+                    <!-- Packages will be dynamically inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal for Adding Package -->
+<div class="modal fade" id="add-package">
+    <div class="modal-dialog modal-md" role="document" style="max-width: 840px;">
+        <div class="modal-content">
+            <div class="modal-header align-items-center">
+                <h5 class="modal-title" id="coachModalLabel">Add Package</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="max-height: calc(100vh - 180px); overflow: auto;">
+                <div class="row" style="row-gap:20px">
+                    <div class="col-12">
+                        <h6 class="mb-2">Package name</h6>
+                        <input type="text" id="packageName" placeholder="Enter package name" class="hwzthat-input w-100">
+                    </div>
+                    <div class="col-12">
+                        <h6 class="mb-2">Please select which courses you want to add to this package.</h6>
+                        <select class="hwzthat-input w-100" id="coursesList">
+                            <!-- Dynamically populated courses -->
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <h6 class="mb-2">Package fee</h6>
+                        <input type="number" id="packageFee" placeholder="Enter package fee" class="hwzthat-input w-100">
+                    </div>
+                    <div class="col-6">
+                        <h6 class="mb-2">Package discount</h6>
+                        <input type="number" id="packageDiscount" placeholder="Enter package discount %" class="hwzthat-input w-100">
+                    </div>
+                    <div class="col-12" style="margin-top: 20px;">
+                        <h6 class="mb-2">Description</h6>
+                        <textarea id="packageDescription" class="hwzthat-input w-100" placeholder="Enter package description" style="height: 100px;"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex align-items-center mt-4 p-3" style="gap:10px;justify-content: flex-end;border-top: 1px solid #39248726;">
+                <button class="site-btn-outline-info hoverbtn px-5" data-dismiss="modal">Cancel</button>
+                <button class="site-btn-success hoverbtn px-5" id="savePackageBtn" style="background-color: #4165ff;border-color: #4165ff;">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- Bootstrap and JQuery scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/off-canvas.js"></script>
+    <script src="js/template.js"></script>
+</body>
+
+</html>

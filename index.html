@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ's Sports Club</title>
+    <link rel="stylesheet" href="/css/style_lo.css">
+</head>
+<body>
+    <nav class="navbar">
+        <img src="/images/1.png" alt="TJ's Sports Club Logo" class="logo">
+        <div class="navbar-toggle" id="navbar-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="navbar-menu" id="navbar-menu">
+            <li class="menu-item hidden"><a href="#">Home</a></li>
+            <li class="menu-item hidden"><a href="#">Professional Training Programs</a></li>
+            <li class="menu-item hidden"><a href="#">Summer Camp</a></li>
+            <li class="menu-item hidden"><a href="#">Membership</a></li>
+            <li class="menu-item hidden"><a href="#">Facility</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h4>"Welcome to TJ's Sports Club Admin Portal -" <br> "Your hub for sports management excellence!"</h4>
+        <h4>Efficiently manage bookings, schedules, and facilities across all courts and courses, with real-time updates and seamless user management.</h4>
+    </div>
+
+    <div class="background">
+        <div class="diagonal-scroll-container">
+            <div class="diagonal-images">
+                <!-- Add your images here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="login-card">
+        <img src="/images/tj-logo.png" style="margin: 0 auto; display: flex; width:120px;" alt="logo">
+        <form id="login-form">
+            <div class="input-field">
+                <input type="text" id="username" name="username" required>
+                <label for="username">Username</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password" name="password" required>
+                <label for="password">Password</label>
+            </div>
+            <h6 class="text-danger text-right w-100">Forgot password?</h6>
+            <button type="submit" class="btn button-elite2 w-100" style="border-radius: 6px;">Log In</button>
+        </form>
+        <div class="login-card-bottom">
+            <h6 class="text-dark">
+                Don’t have an account?
+                <a href="signup.html" class="text-danger">Sign Up</a>
+            </h6>
+        </div>
+    </div>
+
+    <div class="horizontal-scroller">
+        <div class="scroll-content">
+            <button>Table Tennis</button>
+            <button>TJ's Sports Club</button>
+            <button>Badminton</button>
+            <button>Taekwando</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
+    <script type="text/javascript">
+        // Toggle Menu
+        document.getElementById('navbar-toggle').addEventListener('click', function() {
+            var menuItems = document.querySelectorAll('.menu-item');
+            menuItems.forEach(item => {
+                item.classList.toggle('hidden');
+            });
+        });
+
+        // Login form submission
+        $('#login-form').submit(function (e) {
+            e.preventDefault();
+            var username = $('#username').val();
+            var password = $('#password').val();
+
+            $.ajax({
+                url: 'https://hwzthat.com/api/auth/login',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    username: username,
+                    password: password
+                }),
+                success: function (response) {
+                    if (response.status === true) {
+                        // Access the tokens from the response
+                        var accessToken = response.access_token;
+                        var refreshToken = response.refresh_token;
+
+                        // Store tokens and user data in localStorage
+                        localStorage.setItem('accessToken', accessToken);
+                        localStorage.setItem('refreshToken', refreshToken);
+                        localStorage.setItem('userData', JSON.stringify(response.userData));
+
+                        // Fetch user profile after login
+                        fetchUserProfile(accessToken);
+                        alert("Login Sucessful");
+                        // Redirect to courses page
+                        window.location.href = 'courses.html';
+                    } else {
+                        alert('Login failed: Please check your credentials');
+                    }
+                },
+                error: function (error) {
+                    alert('An error occurred while logging in. Please try again.');
+                    console.error('Login error:', error);
+                }
+            });
+        });
+
+        // Fetch User Profile
+        function fetchUserProfile(accessToken) {
+            $.ajax({
+                url: 'https://hwzthat.com/api/get-user-profile',
+                type: 'POST',
+                headers: {
+                    'Authorization': 'Bearer ' + accessToken,
+                    'Accept': 'application/json'
+                },
+                success: function (response) {
+                    if (response.status === true) {
+                        var profileData = response.data;
+                        
+                        // Store profile data in localStorage
+                        localStorage.setItem('userProfile', JSON.stringify(profileData));
+                    }
+                },
+                error: function (error) {
+                    console.error('Profile fetch error:', error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

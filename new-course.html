@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>New Course</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/tab.css">
+    <link rel="shortcut icon" href="images/1.png" />
+
+    <script src="components/sidebar.js" type="text/javascript" defer></script>
+    <script src="components/topnav.js" type="text/javascript" defer></script>
+
+</head>
+
+<body>
+    <div class="container-scroller">
+        <topnav-component></topnav-component>
+        <div class="container-fluid page-body-wrapper">
+            <sidebar-component data-page="courses"></sidebar-component>
+    
+            <div class="course-main add-course">
+                <div class="mb-3 mt-2 heading">
+                    <h4 class="m-0" style="font-weight: 400; color: rgb(104, 104, 104);">
+                        <a href="courses.html" style="color:#5c5c5c;">Course</a>
+                    </h4>
+                    <img src="images/arrow-right-3.png" alt="">
+                    <h4 class="m-0" style="font-weight: 650;">New Course</h4>
+                </div>
+
+                <div class="form-container">
+                    <div class="form-body">
+                        <form id="addCourseForm" style="width: 100%;" class="row">
+                            <div class="col-12 col-sm-7">
+                                <h6 class="mb-2 "> <img src="images/graduation.png" alt="">Course Title</h6>
+                                <input type="text" id="courseTitle" placeholder="Enter course title" class="hwzthat-input w-100" required>
+                            </div>
+                            <div class="col-12 col-sm-5 mt-3 mt-sm-0" style="align-self: end;">
+                                <h6 class="mb-2">Upload file</h6>
+                                <div class="add-package-file" style="margin-top: 12px;">
+                                    <img src="images/download.png" alt="">
+                                    <label for="courseMedia">Upload media file</label>
+                                    <input id="courseMedia" type="file" class="hwzthat-input w-100" style="display: none;">
+                                </div>
+                            </div>
+
+                            <!-- Coaches dropdown populated dynamically -->
+                            <div class="col-12 mt-3">
+                                <h6 class="mb-2 "> <img src="images/group.png" alt="">Coaches <span>(optional)</span></h6>
+                                <select id="coachesList" class="hwzthat-input w-100" name="coaches"></select>
+                            </div>
+
+                            <!-- Location selection -->
+                            <div class="col-sm-3 col-12 mt-3">
+                                <h6 class="mb-2 "> <img src="images/location.png" alt="" style="width: 15px;">Location</h6>
+                                <select id="courseLocation" class="hwzthat-input w-100" name="location">
+                                    <option value="Offline">Offline</option>
+                                    <option value="Online">Online</option>
+                                </select>
+                            </div>
+
+                            <!-- Course duration -->
+                            <div class="col-12">
+                                <h3 class="batch-heading">Course Duration</h3>
+                            </div>
+                            <div class="col-sm-3 col-6 mt-4">
+                                <h6 class="mb-2 ">Select duration</h6>
+                                <select id="courseDuration" class="hwzthat-input w-100" name="duration">
+                                    <option value="1 Year">1 Year</option>
+                                    <option value="6 Months">6 Months</option>
+                                    <option value="3 Months">3 Months</option>
+                                </select>
+                            </div>
+
+                            <!-- Batch timings -->
+                            <div class="col-sm-3 col-6 mt-4">
+                                <h6 class="mb-2 "> <img src="images/calendar.png" alt="" style="width: 15px;">Start date</h6>
+                                <input type="date" id="startDate" class="hwzthat-input w-100" required>
+                            </div>
+
+                            <!-- Batch creation -->
+                            <div class="col-12">
+                                <h3 class="batch-heading">Batch Creation</h3>
+                            </div>
+                            <div class="col-12">
+                                <h3 class="batch-subheading">Added batches <span>3</span></h3>
+                            </div>
+                            <div class="times" style="padding-left: 10px;padding-right: 10px;">
+                                <div class="time">
+                                    <div class="duration">
+                                        <h4>10am - 11am</h4>
+                                    </div>
+                                </div>
+                                <div class="time">
+                                    <div class="duration">
+                                        <h4>11am - 12pm</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <a class="dropdown-item add-batch" data-toggle="modal" data-target="#add-batch"><span>+</span>Add batch</a>
+                            </div>
+
+                            <!-- Ground/Lane Booking -->
+                            <div class="col-12">
+                                <h3 class="batch-heading">Ground/Lane Booking</h3>
+                                <div class="ground-lanes pt-4 pb-4">
+                                    <div class="lane">
+                                        <h4>Lane 1</h4>
+                                    </div>
+                                    <div class="lane">
+                                        <h4>Lane 2</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <a class="dropdown-item add-batch" data-toggle="modal" style="width: 180px;" data-target="#ground-lane-booking"><span>+</span>Add ground/ Lane</a>
+                            </div>
+
+                            <!-- Payment -->
+                            <div class="col-12">
+                                <h3 class="batch-heading">Payment</h3>
+                                <h3 class="batch-subheading" style="font-size: 12px;font-weight: 500;"><img src="images/course-fee.png" alt="">Course Fee</h3>
+                            </div>
+                            <div class="col-12 col-sm-3">
+                                <input type="text" placeholder="200 CAD" name="course_fee" class="hwzthat-input w-100">
+                            </div>
+                            <div class="col-12">
+                                <h3 class="batch-subheading" style="font-size: 12px;font-weight: 600;">Added discounts</h3>
+                            </div>
+                            <div class="col-12">
+                                <div class="discount-text">
+                                    <div class="count">1</div>
+                                    <h3 class="batch-subheading" style="font-size: 12px;font-weight: 500;">Siblings discount <span>5%</span></h3>
+                                </div>
+                                <div class="discount-text">
+                                    <div class="count">2</div>
+                                    <h3 class="batch-subheading" style="font-size: 12px;font-weight: 500;">3 months installment with<span>5% interest.</span>Total course fee will be <span>230 CAD</span></h3>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-3">
+                                <a class="dropdown-item add-batch" data-toggle="modal" style="width: 150px;" data-target="#add-discount"><span>+</span>Add discount</a>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="form-bottom col-12 mt-5">
+                                <div class="col-12">
+                                    <h3 class="batch-heading"><img src="images/description.png" alt="">Description</h3>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="description">
+                                    <textarea name="description" placeholder="Enter course description" class="hwzthat-input w-100" style="min-height: 100px;"></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Submit button -->
+                            <div class="col-12 mt-3">
+                                <button type="submit" class="site-btn-success hoverbtn px-5" style="background-color: #4165ff;border-color: #4165ff;">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for adding batch -->
+    <div class="modal fade " id="add-batch">
+        <div class="modal-dialog modal-md" role="document" style="max-width: 990px;">
+            <div class="modal-content">
+                <div class="modal-header align-items-center">
+                    <h5 class="modal-title">Add Batch</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6 mt-3">
+                            <h6 class="mb-2 subhead-bold">Start time</h6>
+                            <input type="time" placeholder="03:00" value="15:00" class="hwzthat-input w-100">
+                        </div>
+                        <div class="col-6 mt-3">
+                            <h6 class="mb-2 subhead-bold">End time</h6>
+                            <input type="time" placeholder="04:00" value="16:00" class="hwzthat-input w-100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ground/Lane Booking Modal -->
+    <div class="modal fade " id="ground-lane-booking">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header align-items-center">
+                    <h5 class="modal-title">Ground/Lane Booking</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="lane-table w-100">
+                        <thead>
+                            <tr class="table-head">
+                                <th>Location</th>
+                                <th>Lane</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Willowbrook</td>
+                                <td>Lane 1</td>
+                                <td class="status-green">Available</td>
+                            </tr>
+                            <tr>
+                                <td>Willowbrook</td>
+                                <td>Lane 2</td>
+                                <td class="status-red">Not available</td>
+                            </tr>
+                            <!-- Add more rows as needed -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const coachesDropdown = document.getElementById('coachesList');
+
+            // Fetch coaches list and populate dropdown
+            async function fetchCoaches() {
+                const token = localStorage.getItem('accessToken'); // Fetch the token from local storage
+                try {
+                    const response = await fetch('https://hwzthat.com/api/get_coaches_list', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': 'Bearer ' + token,
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    const result = await response.json();
+                    if (result) {
+                        // Loop through the coaches array and add options to the dropdown
+                        result.forEach(coach => {
+                            const option = document.createElement('option');
+                            option.value = coach.id;
+                            option.textContent = `${coach.first_name} ${coach.last_name}`;
+                            coachesDropdown.appendChild(option);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error fetching coaches:', error);
+                }
+            }
+
+            fetchCoaches(); // Populate coaches on page load
+
+            // Form submission
+            document.getElementById('addCourseForm').addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const token = localStorage.getItem('accessToken'); // Fetch token from local storage
+                const courseTitle = document.getElementById('courseTitle').value;
+                const courseMedia = document.getElementById('courseMedia').files[0];
+                const selectedCoach = document.getElementById('coachesList').value;
+                const location = document.getElementById('courseLocation').value;
+                const duration = document.getElementById('courseDuration').value;
+                const startDate = document.getElementById('startDate').value;
+
+                const formData = new FormData();
+                formData.append('course_title', courseTitle);
+                formData.append('coach_id', selectedCoach);
+                formData.append('location', location);
+                formData.append('duration', duration);
+                formData.append('start_date', startDate);
+                if (courseMedia) {
+                    formData.append('course_media', courseMedia);
+                }
+
+                try {
+                    const response = await fetch('https://hwzthat.com/api/add-course', {
+                        method: 'POST',
+                        headers: {
+                            'Authorization': 'Bearer ' + token
+                        },
+                        body: formData
+                    });
+
+                    const result = await response.json();
+                    if (result.success) {
+                        alert('Course added successfully!');
+                        // Redirect or clear form
+                    } else {
+                        alert('Failed to add course.');
+                    }
+                } catch (error) {
+                    console.error('Error adding course:', error);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

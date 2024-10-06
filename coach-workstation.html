@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Coach Workstation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tab.css">
+    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="shortcut icon" href="images/favicon.png" />
+
+    <script src="components/sidebar.js" type="text/javascript" defer></script>
+    <script src="components/topnav.js" type="text/javascript" defer></script>
+</head>
+
+<body>
+    <div class="container-scroller">
+        <topnav-component></topnav-component>
+        <div class="container-fluid page-body-wrapper">
+            <sidebar-component data-page="Coach-Workstation"></sidebar-component>
+            <div class="main-panel coach-workstation">
+                <h2 class="main-heading m-0">Coach Workstation</h2>
+                <div class="search-input">
+                    <img src="images/search.png" alt="">
+                    <input type="text" id="searchStudent" placeholder="Search students">
+                </div>
+                <h6 class="text-gray package-count mt-3" style="font-size: 14px;">Total Students:
+                    <span id="totalStudents" style="color: #6e6e6e;">0</span>
+                </h6>
+
+                <!-- Students List Container -->
+                <div class="students-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="js/off-canvas.js"></script>
+    <script src="js/template.js"></script>
+
+    <script>
+        // Fetch user's organizations
+        function fetchUserOrganizations() {
+            const token = localStorage.getItem('accessToken');
+            fetch('https://hwzthat.com/api/get-user-organizations', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Access the correct path for organization details
+                if (data.errorcode === 0 && data.data.length > 0) {
+                    const orgId = data.data[0].organization.id; // Assuming the first organization is used
+                    localStorage.setItem('orgId', orgId);   // Save the orgId in localStorage
+                    fetchStudents();                   // Fetch students using orgId
+                } else {
+                    console.error('No organizations found for the user');
+                }
+            })
+            .catch(error => console.error('Error fetching user organizations:', error));
+        }
+
+        // Fetch and display students based on organization ID
+        function fetchStudents() {
+            const token = localStorage.getItem('accessToken');
+            const orgId = localStorage.getItem('orgId');  // Get orgId from localStorage
+            fetch(`https://hwzthat.com/api/get_student_list_by_coach`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ orgId: orgId })  // Send orgId in the request body
+            })
+            .then(response => response.json())
+            .then(data => {
+                const studentsContainer = document.querySelector('.students-container');
+                const totalStudents = document.getElementById('totalStudents');
+                studentsContainer.innerHTML = ''; // Clear previous results
+
+                // The API response is already an array, no need for a students property
+                if (Array.isArray(data) && data.length > 0) {
+                    data.forEach(student => {
+                        const studentElement = document.createElement('a');
+                        studentElement.href = `student-individual.html?studentId=${student.student_user_id}`; // Navigate with student ID
+                        studentElement.classList.add('bg-white', 'rounded', 'd-block', 'border');
+                        studentElement.innerHTML = `
+                            <div class="dp-name">
+                                <img src="images/default-avatar.png" class="dp-1"> <!-- Placeholder image -->
+                                <div>
+                                    <h5 class="font-weight-600 mb-1">${student.first_name} ${student.last_name}</h5>
+                                    <h6 class="m-0 h6">Student ID: ${student.student_user_id}</h6>
+                                </div>
+                            </div>`;
+                        studentsContainer.appendChild(studentElement);
+                    });
+
+                    // Update total students count
+                    totalStudents.textContent = data.length;
+                } else {
+                    console.error('No students found');
+                    totalStudents.textContent = '0'; // Set total to 0 if no students
+                }
+            })
+            .catch(error => console.error('Error fetching students:', error));
+        }
+
+        window.onload = function () {
+            fetchUserOrganizations();  // Fetch organization first, then students
+        };
+    </script>
+</body>
+</html>
