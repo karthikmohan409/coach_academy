@@ -72,14 +72,6 @@ class Sidebar extends HTMLElement {
                 <a href="">
                   <li class="nav-item">
                     <div class="nav-link" >
-                      <img src="images/customers.png">
-                      <span class="menu-title">Customers</span>
-                    </div>
-                  </li>
-                </a>
-                <a href="">
-                  <li class="nav-item">
-                    <div class="nav-link" >
                       <img src="images/reports.png">
                       <span class="menu-title">Reports</span>
                     </div>
