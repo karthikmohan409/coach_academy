@@ -1,3 +1,15 @@
+@media only screen and (max-width:1000px) and (min-width:860px) {
+
+    .login-page .left{
+        padding-left: 45px;
+    }
+    .login-page .left h3{
+        font-size: 50px;
+    }
+    .login-page .left h2{
+        font-size: 66px;
+    }
+}
 @media only screen and (max-width:860px) and (min-width:480px) {
     .course-main {
         width: 100%;
@@ -28,7 +40,7 @@
 
     .package .bottom .ribbon {
         padding: 6px 10px;
-        top: 20%;
+        top: 50%;
     }
 
     .package h4 {
@@ -43,9 +55,11 @@
     .course_details .row {
         flex-direction: row;
     }
-    .course-details .action-zone-add-student-body .list h3{
+
+    .course-details .action-zone-add-student-body .list h3 {
         font-size: 7px;
     }
+
     .course_details .row .col-4 {
         margin-top: 40px;
         width: 100% !important;
@@ -60,7 +74,7 @@
 
     .course_details .package .bottom .ribbon {
         padding: 10px;
-        top: 16%;
+        top: 0%;
     }
 
     .course_details .package .bottom .ribbon h4 {
@@ -196,6 +210,7 @@
     .billing-table thead th {
         font-size: 9px;
     }
+
     .course-based-dashboard {
         padding: 10px;
         flex-direction: row;
@@ -358,80 +373,227 @@
         font-size: 12px;
     }
 
-    .course-details .action-zone-add-student-body .list .person h4{
+    .course-details .action-zone-add-student-body .list .person h4 {
         font-size: 10px;
     }
-    .coach-workstation .students-container{
-        grid-template-columns: repeat(2,1fr);
+
+    .coach-workstation .students-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .coach-workstation{
+
+    .coach-workstation {
         padding: 1.5rem 1rem 1.5rem 1rem;
     }
-    .coach-workstation .full-view .left-profile{
-        width:30%
+
+    .coach-workstation .full-view .left-profile {
+        width: 30%
     }
-    .coach-workstation .full-view .left-profile .profile h3{
+
+    .coach-workstation .full-view .left-profile .profile h3 {
         font-size: 17px;
     }
-    .coach-workstation .full-view .left-profile .profile p{
+
+    .coach-workstation .full-view .left-profile .profile p {
         font-size: 12px;
     }
-    .coach-workstation .full-view .left-profile .buttons button img{
+
+    .coach-workstation .full-view .left-profile .buttons button img {
         width: 10px;
     }
-    .coach-workstation .full-view .left-profile .buttons button{
+
+    .coach-workstation .full-view .left-profile .buttons button {
         font-size: 9px;
     }
-    .coach-workstation .full-view .right-content .nav-pills .nav-link{
+
+    .coach-workstation .full-view .right-content .nav-pills .nav-link {
         font-size: 10px;
     }
-    .coach-workstation .full-view .right-content .nav-pills .nav-link{
+
+    .coach-workstation .full-view .right-content .nav-pills .nav-link {
         padding: 0.2rem 0.5rem;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks .create-new{
-        padding:10px;
+
+    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks .create-new {
+        padding: 10px;
         font-size: 11px;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td {
         font-size: 12px;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment table thead tr th{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment table thead tr th {
         font-size: 12px;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td p{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td p {
         width: 80px;
         font-size: 12px;
         padding: 1px 18px;
     }
-    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper .selects select{
+
+    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper .selects select {
         width: 100px !important;
-        font-size:9px;
+        font-size: 9px;
         padding: 5px 2px;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses table thead tr th{
+
+    .coach-workstation .full-view .right-content .tab-content .courses table thead tr th {
         font-size: 11px;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses table tbody tr td{
+
+    .coach-workstation .full-view .right-content .tab-content .courses table tbody tr td {
         font-size: 11px;
     }
-    .coach-workstation #generate-report .modal-body .column-container{
+
+    .coach-workstation #generate-report .modal-body .column-container {
         flex-direction: column;
     }
-    .coach-workstation #generate-report .modal-body .left{
+
+    .coach-workstation #generate-report .modal-body .left {
         width: 100%;
     }
-    .coach-workstation #generate-report .modal-body .right{
+
+    .coach-workstation #generate-report .modal-body .right {
         width: 100%;
     }
-    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-list{
+
+    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-list {
         flex-direction: column;
         align-items: start;
     }
-    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-list .title p{
+
+    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-list .title p {
         margin-bottom: 0;
     }
-    .coach-workstation .full-view .right-content .tab-content .reports table tbody tr td{
+
+    .coach-workstation .full-view .right-content .tab-content .reports table tbody tr td {
         font-size: 11px;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .chatter img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .chatter .text p {
+        font-size: 8px;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .chatter .text h3 {
+        font-size: 11px;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .date {
+        font-size: 8px;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .date-count .count {
+        font-size: 8px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .navbar .navbar-menu-wrapper .navbar-nav.navbar-nav-right {
+        margin-left: auto;
+    }
+
+    .assignment-page .contents .tab-pane .select-buttons .selects select {
+        padding: 6px 30px 6px 10px;
+    }
+
+    .assignment-page .contents .tab-pane .select-buttons a {
+        font-size: 11px;
+    }
+
+    .assignment-page .tab-section .nav-pills .nav-item p {
+        font-size: 12px;
+    }
+    .video-analyzer .tab-section .nav-pills .nav-item p{
+        font-size: 12px;
+    }
+    .video-analyzer .tab-section .nav-pills .nav-item .nav-link{
+        height: 120px;
+    }
+    .notification-page .full-container .tab-section .nav-pills .nav-item .nav-link{
+        padding: 10px 0px 10px 10px;
+        grid-template-columns: repeat(2,1fr);
+    }
+    .notification-page .full-container .tab-section .head .item:nth-child(2){
+        display: none;
+    }
+    .notification-page .full-container .tab-section .nav-pills .nav-item .nav-link .item:nth-child(2){
+        display: none;
+    }
+    .notification-page .full-container .tab-section .head{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .notification-page .full-container .tab-section{
+        width: 40%;
+    }
+    .notification-page .full-container .contents .body-content .message{
+        width: 50%;
+    }
+    .notification-page .full-container .contents .body-content .tables table tbody tr td .profile p{
+        font-size: 12px;
+    }
+    .notification-page .full-container .contents .body-content .tables table tbody tr td .status{
+        font-size: 12px;
+    }
+    .notification-page .full-container .contents .body-content .tables table tbody tr td .status.no img{
+        width: 8px;
+    }
+    .notification-page .full-container .contents .body-content .tables table tbody tr td .status{
+        width: 55px;
+    }
+    .notification-page .full-container .contents .body-content .tables{
+        width: 50%;
+    }
+    .notification-page .full-container .contents{
+        width: 60%;
+    }
+    .send-notification-page .profile-container{
+        grid-template-columns: repeat(5,1fr);
+    }
+    .package .course-details{
+        flex-wrap: wrap;
+    }
+    .course-main .table-container table tbody tr td p.partially-paid{
+        font-size: 11px;
+    }
+    .course-main .table-container table tbody tr td p.paid{
+        font-size: 11px;
+    }
+    .login-page .left h3{
+        font-size: 35px;
+    }
+    .login-page .left h2{
+        font-size: 47px;
+    }
+    .login-page .left p{
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .login-page .right{
+        padding: 50px 30px;
+    }
+    .register-page .right .content .inputs label p{
+        font-size: 11px;
+    }
+    .register-page .right .content .password .pass label input{
+        padding: 5px;
+    }
+    .register-page .right .content .password .pass label input::placeholder{
+        font-size: 12px;
+    }
+    .register-page .right .content .password .pass-container .details .lists .list p{
+        font-size: 12px;
+    }
+    .register-page .right .content .password .pass label{
+        font-size: 14px;
+    }
+    .register-page .right .content .conditions{
+        font-size: 13px;
     }
 
 }

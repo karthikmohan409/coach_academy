@@ -19,7 +19,7 @@
     }
 
     .package-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .package .bottom .ribbon h4 {
@@ -28,7 +28,7 @@
 
     .package .bottom .ribbon {
         padding: 6px 10px;
-        top: 20%;
+        top: 50%;
     }
 
     .package h4 {
@@ -58,7 +58,7 @@
 
     .course_details .package .bottom .ribbon {
         padding: 12px 22px;
-        top: 50%;
+        top: 0%;
     }
 
     .course_details .package .bottom .ribbon h4 {
@@ -74,13 +74,20 @@
     }
 
     .batch-add-student .dashboard {
-        flex-direction: row;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        padding: 10px;
     }
 
     .batch-add-student .dashboard .item {
         padding: 7px;
         margin-top: 0;
-
+        width: 100% !important;
+        max-width: unset;
+        
+    }
+    .batch-add-student .dashboard .item:nth-child(2)::after{
+        content:none;
     }
 
     .batch-add-student .dashboard .item .subheading {
@@ -364,507 +371,660 @@
     .bottom-table tbody tr td {
         font-size: 12px;
     }
-    .student-goals .goal-container{
+
+    .student-goals .goal-container {
         flex-direction: column;
     }
-    .student-goals .goal-container a{
+
+    .student-goals .goal-container a {
         width: 100%;
     }
-    .student-goals .goal-tab-container{
+
+    .student-goals .goal-tab-container {
         flex-direction: column;
     }
-    .student-goals .goal-tab-container .goal-tabs{
+
+    .student-goals .goal-tab-container .goal-tabs {
         width: 100%;
     }
-    .student-goals .goal-tab-container .goal-content{
+
+    .student-goals .goal-tab-container .goal-content {
         width: 100%;
         height: 100%;
     }
-    .student-goals .goal-tab-container .goal-content .description{
+
+    .student-goals .goal-tab-container .goal-content .description {
         height: 250px;
         overflow-y: scroll;
     }
-    .student-goals .goal-tab-container .search{
+
+    .student-goals .goal-tab-container .search {
         padding: 5px 10px;
     }
-    .student-goals .goal-tab-container .goal-content .header h2{
+
+    .student-goals .goal-tab-container .goal-content .header h2 {
         font-size: 16px;
     }
-    .student-goals .goal-tab-container .goal-content .description{
+
+    .student-goals .goal-tab-container .goal-content .description {
         padding: 10px 28px 40px 28px;
     }
-    .student-goals .goal-tab-container .goal-content .chat-input input{
+
+    .student-goals .goal-tab-container .goal-content .chat-input input {
         width: 60%;
     }
-    .student-goals .goal-tab-container .goal-content .chat-input .icons{
-        width:40%;
-        gap:20px;
+
+    .student-goals .goal-tab-container .goal-content .chat-input .icons {
+        width: 40%;
+        gap: 20px;
     }
-    .student-goals .title h3{
+
+    .student-goals .title h3 {
         font-size: 18px;
     }
-    .student-goals .title .main-heading img{
+
+    .student-goals .title .main-heading img {
         width: 20px;
     }
-    .session-plan .title .back{
-        font-size:13px;
+
+    .session-plan .title .back {
+        font-size: 13px;
     }
-    .session-plan .data-header .buttons button{
+
+    .session-plan .data-header .buttons button {
         padding: 5px 10px;
         font-size: 9px;
     }
-    .session-plan .data-header{
+
+    .session-plan .data-header {
         margin-top: 30px;
     }
-    .session-plan{
-        padding:1.5rem 1rem 1.5rem 1rem;
+
+    .session-plan {
+        padding: 1.5rem 1rem 1.5rem 1rem;
     }
-    .session-plan .tabs-container .tabs ul li a{
+
+    .session-plan .tabs-container .tabs ul li a {
         flex-direction: column;
         padding: 10px;
     }
-    .session-plan .tabs-container .tabs ul li a .tab-date{
+
+    .session-plan .tabs-container .tabs ul li a .tab-date {
         font-size: 10px;
     }
-    .session-plan .tabs-container .tabs ul li a .present{
+
+    .session-plan .tabs-container .tabs ul li a .present {
         display: none;
     }
-    .session-plan .tabs-container .content .date-header{
+
+    .session-plan .tabs-container .content .date-header {
         padding: 15px 10px;
     }
-    .session-plan .tabs-container .content .date-header .text .date{
+
+    .session-plan .tabs-container .content .date-header .text .date {
         font-size: 9px;
     }
-    .session-plan .tabs-container .content .date-header .present{
+
+    .session-plan .tabs-container .content .date-header .present {
         font-size: 9px;
     }
-    .session-plan .tabs-container .content .date-header .report-view-text{
+
+    .session-plan .tabs-container .content .date-header .report-view-text {
         font-size: 9px;
     }
-    .session-plan .tabs-container .content table thead tr td{
-        padding: 4px 10px ;
+
+    .session-plan .tabs-container .content table thead tr td {
+        padding: 4px 10px;
         font-size: 10px;
     }
-    .session-plan .tabs-container .content table tr td{
+
+    .session-plan .tabs-container .content table tr td {
         padding-left: 10px;
     }
-    .session-plan .tabs-container .content table tbody tr td .profile h6{
+
+    .session-plan .tabs-container .content table tbody tr td .profile h6 {
         font-size: 10px;
     }
-    .session-plan .tabs-container .content table tbody tr td .profile img{
+
+    .session-plan .tabs-container .content table tbody tr td .profile img {
         width: 20px;
         height: 20px;
     }
-    .session-plan .tabs-container .content table tbody tr td{
+
+    .session-plan .tabs-container .content table tbody tr td {
         font-size: 8px;
         padding: 5px;
     }
-    .session-plan .tabs-container .content table tbody tr td .complete-button{
+
+    .session-plan .tabs-container .content table tbody tr td .complete-button {
         white-space: nowrap;
         padding: 3px 5px;
     }
-    .session-plan .tabs-container .content table tbody .absent-head{
+
+    .session-plan .tabs-container .content table tbody .absent-head {
         padding: 15px 10px !important;
     }
-    .session-plan .tabs-container .content table tbody .absent-head h3{
+
+    .session-plan .tabs-container .content table tbody .absent-head h3 {
         white-space: nowrap;
-        
+
     }
-    .session-plan .data-header .count h3{
-        width:80px;
+
+    .session-plan .data-header .count h3 {
+        width: 80px;
     }
-    #session-report .modal-body table tbody tr td .profile h6{
+
+    #session-report .modal-body table tbody tr td .profile h6 {
         font-size: 12px;
     }
-    #session-report .modal-body table thead tr th{
+
+    #session-report .modal-body table thead tr th {
         font-size: 12px;
     }
-    #session-report .modal-body table tbody tr td{
+
+    #session-report .modal-body table tbody tr td {
         font-size: 12px;
     }
-    #reflection-sheet .modal-body .contents .total-headings{
-        width:100%;
-    }
-    #reflection-sheet .modal-body .contents .total-headings h3{
-        font-size: 11px;
-    }
-    #reflection-sheet .modal-body .contents .time-blocks .blocks h3{
-        font-size: 12px;
-    }
-    #reflection-sheet .modal-body .contents .time-blocks .blocks p{
-        font-size: 10px;
-    }
-    #reflection-sheet .modal-body .contents .time-blocks{
+
+    #reflection-sheet .modal-body .contents .total-headings {
         width: 100%;
     }
-    #reflection-sheet .modal-body .contents .time-blocks .blocks{
+
+    #reflection-sheet .modal-body .contents .total-headings h3 {
+        font-size: 11px;
+    }
+
+    #reflection-sheet .modal-body .contents .time-blocks .blocks h3 {
+        font-size: 12px;
+    }
+
+    #reflection-sheet .modal-body .contents .time-blocks .blocks p {
+        font-size: 10px;
+    }
+
+    #reflection-sheet .modal-body .contents .time-blocks {
+        width: 100%;
+    }
+
+    #reflection-sheet .modal-body .contents .time-blocks .blocks {
         padding: 20px 10px;
         height: 70px;
     }
-    #reflection-sheet .modal-body .contents .performances{
+
+    #reflection-sheet .modal-body .contents .performances {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-    #reflection-sheet .modal-body .contents .performances .performance{
+
+    #reflection-sheet .modal-body .contents .performances .performance {
         width: unset;
     }
-    #reflection-sheet .modal-body .contents .performances .performance[aria-selected="true"]{
+
+    #reflection-sheet .modal-body .contents .performances .performance[aria-selected="true"] {
         width: unset;
     }
-    #do-reflection-sheet .modal-body .contents .total-headings{
-        width:100%;
-    }
-    #do-reflection-sheet .modal-body .contents .total-headings h3{
-        font-size: 11px;
-    }
-    #do-reflection-sheet .modal-body .contents .time-blocks .blocks h3{
-        font-size: 12px;
-    }
-    #do-reflection-sheet .modal-body .contents .time-blocks .blocks p{
-        font-size: 10px;
-    }
-    #do-reflection-sheet .modal-body .contents .time-blocks{
+
+    #do-reflection-sheet .modal-body .contents .total-headings {
         width: 100%;
     }
-    #do-reflection-sheet .modal-body .contents .time-blocks .blocks{
+
+    #do-reflection-sheet .modal-body .contents .total-headings h3 {
+        font-size: 11px;
+    }
+
+    #do-reflection-sheet .modal-body .contents .time-blocks .blocks h3 {
+        font-size: 12px;
+    }
+
+    #do-reflection-sheet .modal-body .contents .time-blocks .blocks p {
+        font-size: 10px;
+    }
+
+    #do-reflection-sheet .modal-body .contents .time-blocks {
+        width: 100%;
+    }
+
+    #do-reflection-sheet .modal-body .contents .time-blocks .blocks {
         padding: 20px 10px;
         height: 70px;
     }
-    #do-reflection-sheet .modal-body .contents .performances{
+
+    #do-reflection-sheet .modal-body .contents .performances {
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-    #do-reflection-sheet .modal-body .contents .performances .do-performance{
+
+    #do-reflection-sheet .modal-body .contents .performances .do-performance {
         width: unset;
     }
-    #start-live-session .modal-header .modal-title span{
+
+    #start-live-session .modal-header .modal-title span {
         font-size: 9px;
     }
-    #start-live-session .modal-body .session-select label{
+
+    #start-live-session .modal-body .session-select label {
         width: 48%;
     }
-    #start-live-session .modal-body .session-select{
+
+    #start-live-session .modal-body .session-select {
         flex-wrap: wrap;
-        gap:4px
+        gap: 4px
     }
-    #schedule-advanced .modal-header .modal-title span{
+
+    #schedule-advanced .modal-header .modal-title span {
         font-size: 9px;
     }
-    #schedule-advanced .modal-body .input-container .input{
-        width:50%
+
+    #schedule-advanced .modal-body .input-container .input {
+        width: 50%
     }
-    #schedule-advanced .modal-body .input-container .input label{
+
+    #schedule-advanced .modal-body .input-container .input label {
         font-size: 9px;
     }
-    #schedule-advanced .modal-body .titles{
+
+    #schedule-advanced .modal-body .titles {
         font-size: 9;
     }
-    #schedule-advanced .modal-body .session-select{
+
+    #schedule-advanced .modal-body .session-select {
         flex-wrap: wrap;
     }
-    #schedule-advanced .modal-body .session-select label{
+
+    #schedule-advanced .modal-body .session-select label {
         width: 48%;
     }
-    #schedule-advanced .modal-body .session-select{
-        gap:5px;
+
+    #schedule-advanced .modal-body .session-select {
+        gap: 5px;
     }
-    .session-plan .tabs-container .content .mid-content .session-time{
+
+    .session-plan .tabs-container .content .mid-content .session-time {
         padding: 15px;
     }
-    .session-plan .tabs-container .content .mid-content .session-time h3{
+
+    .session-plan .tabs-container .content .mid-content .session-time h3 {
         font-size: 11px;
     }
-    .session-plan .tabs-container .content .mid-content .session-group thead tr td{
+
+    .session-plan .tabs-container .content .mid-content .session-group thead tr td {
         padding: 10px 15px;
     }
-    .session-plan .tabs-container .content .mid-content .session-group thead tr td p{
+
+    .session-plan .tabs-container .content .mid-content .session-group thead tr td p {
         font-size: 12px;
     }
-    .session-plan .tabs-container .content .mid-content .session-group thead tr td h4{
+
+    .session-plan .tabs-container .content .mid-content .session-group thead tr td h4 {
         font-size: 13px;
     }
-    #edit-session .modal-header .modal-title span{
+
+    #edit-session .modal-header .modal-title span {
         font-size: 9px;
     }
-    #edit-session .modal-body .select-boxes select{
+
+    #edit-session .modal-body .select-boxes select {
         width: 100%;
     }
-    #edit-session .modal-body .select-boxes .select-group select{
+
+    #edit-session .modal-body .select-boxes .select-group select {
         width: 80%;
     }
-    .session-plan .tabs-container .content .date-header .edit a{
+
+    .session-plan .tabs-container .content .date-header .edit a {
         font-size: 12px;
     }
-    .session-plan .tabs-container .content .date-header .edit a img{
+
+    .session-plan .tabs-container .content .date-header .edit a img {
         width: 12px;
     }
-    .session-plan .data-header .count h3{
+
+    .session-plan .data-header .count h3 {
         font-size: 12px;
     }
-    #edit-session .modal-body .dp-name .delete{
+
+    #edit-session .modal-body .dp-name .delete {
         margin-left: 40px;
     }
-    .session-plan .main-heading{
+
+    .session-plan .main-heading {
         font-size: 18px;
     }
-    .coach-workstation .students-container{
-        grid-template-columns: repeat(1,1fr);
+
+    .coach-workstation .students-container {
+        grid-template-columns: repeat(1, 1fr);
     }
-    .coach-workstation{
+
+    .coach-workstation {
         padding: 1.5rem 1rem 1.5rem 1rem;
     }
-    .coach-workstation .full-view{
+
+    .coach-workstation .full-view {
         flex-direction: column;
     }
-    .coach-workstation .full-view .left-profile{
+
+    .coach-workstation .full-view .left-profile {
         width: 100%;
     }
-    .coach-workstation .full-view .right-content{
+
+    .coach-workstation .full-view .right-content {
         width: 100%;
     }
-    .coach-workstation .full-view .right-content .nav-pills{
+
+    .coach-workstation .full-view .right-content .nav-pills {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks .create-new{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks .create-new {
         font-size: 12px;
         padding: 5px 10px;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks .selects select{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks .selects select {
         width: 160px !important;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment .top-clicks {
         flex-direction: column;
-        gap:10px;
+        gap: 10px;
         align-items: start;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td p{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td p {
         width: 80px;
     }
-    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td{
+
+    .coach-workstation .full-view .right-content .tab-content .assignment table tbody tr td {
         font-size: 11px;
         padding: 5px;
     }
-    .coach-workstation #new-assigment .modal-body{
+
+    .coach-workstation #new-assigment .modal-body {
         flex-direction: column;
     }
-    .coach-workstation #new-assigment .modal-body .left{
+
+    .coach-workstation #new-assigment .modal-body .left {
         width: 100%;
     }
-    .coach-workstation #new-assigment .modal-body .right{
+
+    .coach-workstation #new-assigment .modal-body .right {
         width: 100%;
         margin-top: 60px;
     }
-    .coach-workstation #new-assigment .site-btn-outline-info{
+
+    .coach-workstation #new-assigment .site-btn-outline-info {
         padding-left: 2rem !important;
         padding-right: 2rem !important;
     }
-    .coach-workstation #new-assigment .site-btn-success{
+
+    .coach-workstation #new-assigment .site-btn-success {
         padding-left: 2rem !important;
         padding-right: 2rem !important;
     }
-    .coach-workstation #assignment-1 .modal-body{
+
+    .coach-workstation #assignment-1 .modal-body {
         flex-direction: column;
     }
-    .coach-workstation #assignment-1 .modal-body .left{
+
+    .coach-workstation #assignment-1 .modal-body .left {
         width: 100%;
     }
-    .coach-workstation #assignment-1 .modal-body .right{
+
+    .coach-workstation #assignment-1 .modal-body .right {
         width: 100%;
     }
-    .coach-workstation #assignment-1 .modal-body .left .video-scroller{
+
+    .coach-workstation #assignment-1 .modal-body .left .video-scroller {
         padding: 10px;
     }
-    .coach-workstation #assignment-1 .modal-body .left .video-scroller .videos .profile-description .text .title span{
+
+    .coach-workstation #assignment-1 .modal-body .left .video-scroller .videos .profile-description .text .title span {
         font-size: 12px;
     }
-    .coach-workstation #assignment-1 .modal-body .left .video-scroller .videos .profile-description .text .title{
-        font-size:13px;
+
+    .coach-workstation #assignment-1 .modal-body .left .video-scroller .videos .profile-description .text .title {
+        font-size: 13px;
     }
-    .coach-workstation .title{
-        gap:5px;
+
+    .coach-workstation .title {
+        gap: 5px;
     }
-    .coach-workstation #assignment-1 .site-btn-outline-info{
+
+    .coach-workstation #assignment-1 .site-btn-outline-info {
         padding-left: 2rem !important;
         padding-right: 2rem !important;
     }
-    .coach-workstation #assignment-1 .site-btn-success{
+
+    .coach-workstation #assignment-1 .site-btn-success {
         padding-left: 2rem !important;
         padding-right: 2rem !important;
     }
-    .coach-workstation .main-heading{
+
+    .coach-workstation .main-heading {
         font-size: 17px;
     }
-    .coach-workstation .title a{
+
+    .coach-workstation .title a {
         font-size: 15px;
     }
-    .coach-workstation .full-view .left-profile .buttons button{
+
+    .coach-workstation .full-view .left-profile .buttons button {
         font-size: 16px;
     }
-    .coach-workstation .full-view .right-content .nav-pills .nav-link{
+
+    .coach-workstation .full-view .right-content .nav-pills .nav-link {
         font-size: 12px;
     }
-    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper{
+
+    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper {
         flex-direction: column;
         align-items: start;
         gap: 10px;
     }
-    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper .selects{
+
+    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper .selects {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper .selects select{
+
+    .coach-workstation .full-view .right-content .tab-content .annotated-videos .topper .selects select {
         width: 165px !important;
     }
-    .coach-workstation .full-view .right-content .tab-content .annotated-videos .tab-content .video-container{
-        grid-template-columns: repeat(2,1fr);
+
+    .coach-workstation .full-view .right-content .tab-content .annotated-videos .tab-content .video-container {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .coach-workstation .full-view .right-content .tab-content .annotated-videos .tab-content .video-container .videos .bottom .video-details{
+
+    .coach-workstation .full-view .right-content .tab-content .annotated-videos .tab-content .video-container .videos .bottom .video-details {
         right: -30%;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses .header{
+
+    .coach-workstation .full-view .right-content .tab-content .courses .header {
         padding: 10px;
         justify-content: space-evenly;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses .header .details p{
+
+    .coach-workstation .full-view .right-content .tab-content .courses .header .details p {
         width: 90px;
         font-size: 11px;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses .header .details h5{
+
+    .coach-workstation .full-view .right-content .tab-content .courses .header .details h5 {
         width: 90px;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses .header .details{
+
+    .coach-workstation .full-view .right-content .tab-content .courses .header .details {
         justify-content: end;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses .nav-pills{
+
+    .coach-workstation .full-view .right-content .tab-content .courses .nav-pills {
         display: flex;
         flex-direction: row;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses table thead tr th{
+
+    .coach-workstation .full-view .right-content .tab-content .courses table thead tr th {
         font-size: 11px;
     }
-    .coach-workstation .full-view .right-content .tab-content .courses table tbody tr td{
+
+    .coach-workstation .full-view .right-content .tab-content .courses table tbody tr td {
         font-size: 10px;
     }
-    .coach-workstation #generate-report .modal-body .column-container{
+
+    .coach-workstation #generate-report .modal-body .column-container {
         flex-direction: column;
     }
-    .coach-workstation #generate-report .modal-body .left{
+
+    .coach-workstation #generate-report .modal-body .left {
         width: 100%;
     }
-    .coach-workstation #generate-report .modal-body .right{
+
+    .coach-workstation #generate-report .modal-body .right {
         width: 100%;
     }
-    .coach-workstation #generate-report .modal-body .right .header-content{
+
+    .coach-workstation #generate-report .modal-body .right .header-content {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap:10px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
         padding: 15px 10px 10px 10px;
     }
-    .coach-workstation #generate-report .modal-body .right .header-content .items{
+
+    .coach-workstation #generate-report .modal-body .right .header-content .items {
         width: unset;
     }
-    .coach-workstation #generate-report .modal-body .right .header-content .items h3{
+
+    .coach-workstation #generate-report .modal-body .right .header-content .items h3 {
         font-size: 12px;
     }
-    .coach-workstation #generate-report .modal-body .right .header-content .items p{
+
+    .coach-workstation #generate-report .modal-body .right .header-content .items p {
         font-size: 11px;
     }
-    .coach-workstation #generate-report .modal-body .right table{
+
+    .coach-workstation #generate-report .modal-body .right table {
         margin: 0;
         width: 100%;
     }
-    .coach-workstation #generate-report .modal-body .right table tr th{
+
+    .coach-workstation #generate-report .modal-body .right table tr th {
         font-size: 11px;
     }
-    .coach-workstation #generate-report .modal-body .right table tbody tr td{
+
+    .coach-workstation #generate-report .modal-body .right table tbody tr td {
         font-size: 11px;
     }
-    .coach-workstation #generate-report .modal-body .right table tbody tr td p{
+
+    .coach-workstation #generate-report .modal-body .right table tbody tr td p {
         font-size: 11px;
     }
-    .coach-workstation #generate-report .modal-body .right table tbody tr td p.partial-paid{
+
+    .coach-workstation #generate-report .modal-body .right table tbody tr td p.partial-paid {
         border-radius: 10px;
     }
-    .coach-workstation .full-view .right-content .tab-content .goal-tab-container{
+
+    .coach-workstation .full-view .right-content .tab-content .goal-tab-container {
         flex-direction: column;
     }
-    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-tabs{
+
+    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-tabs {
         width: 100%;
     }
-    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-content{
+
+    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-content {
         width: 100%;
     }
-    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-content .description{
+
+    .coach-workstation .full-view .right-content .tab-content .goal-tab-container .goal-content .description {
         overflow: auto;
     }
-    .coach-workstation .full-view .right-content .tab-content .reports .top-clicks{
+
+    .coach-workstation .full-view .right-content .tab-content .reports .top-clicks {
         flex-direction: column;
         align-items: start;
     }
-    .coach-workstation .full-view .right-content .tab-content .reports .top-clicks .selects .generate-attendance{
+
+    .coach-workstation .full-view .right-content .tab-content .reports .top-clicks .selects .generate-attendance {
         top: -110%;
     }
-    .coach-workstation .full-view .right-content .tab-content .reports table thead tr th{
+
+    .coach-workstation .full-view .right-content .tab-content .reports table thead tr th {
         font-size: 11px;
     }
-    .coach-workstation .full-view .right-content .tab-content .reports table tbody tr td{
+
+    .coach-workstation .full-view .right-content .tab-content .reports table tbody tr td {
         font-size: 11px;
     }
-    .coach-workstation #generate-attendance .modal-body .selector{
+
+    .coach-workstation #generate-attendance .modal-body .selector {
         flex-direction: column;
     }
-    .coach-workstation #generate-attendance .modal-body .selector select{
+
+    .coach-workstation #generate-attendance .modal-body .selector select {
         width: 100%;
     }
-    .coach-workstation #generate-attendance .modal-body .selector .custom-dropdown{
+
+    .coach-workstation #generate-attendance .modal-body .selector .custom-dropdown {
         width: 100%;
     }
-    .coach-workstation #attendance-single .modal-body .header-container .item p{
+
+    .coach-workstation #attendance-single .modal-body .header-container .item p {
         font-size: 11px;
     }
-    .coach-workstation #attendance-single .modal-body .share-select .selects{
+
+    .coach-workstation #attendance-single .modal-body .share-select .selects {
         width: 75%;
     }
-    .coach-workstation #session-single .modal-content .modal-body .nav-pills .nav-link{
+
+    .coach-workstation #session-single .modal-content .modal-body .nav-pills .nav-link {
         padding: 5px 10px;
     }
-    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .share-select select{
+
+    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .share-select select {
         width: 40%;
     }
-    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .header-rating{
+
+    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .header-rating {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .header-rating .item:first-child{
+
+    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .header-rating .item:first-child {
         width: unset;
     }
-    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .header-rating .item{
+
+    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .header-rating .item {
         width: unset;
         justify-content: start;
     }
-    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .chart-select{
+
+    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane .chart-select {
         width: 100%;
     }
-    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane table thead tr th{
+
+    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane table thead tr th {
         font-size: 11px;
     }
-    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane table tbody tr td{
+
+    .coach-workstation #session-single .modal-content .modal-body .tab-content .tab-pane table tbody tr td {
         font-size: 11px;
     }
-    .coach-workstation #reflection-sheet-single .modal-body .tab-container .left .nav-pills .nav-item .nav-link{
+
+    .coach-workstation #reflection-sheet-single .modal-body .tab-container .left .nav-pills .nav-item .nav-link {
         padding: 10px;
         font-size: 11px;
     }
-    .coach-workstation #reflection-sheet-single .modal-body .tab-container .right{
+
+    .coach-workstation #reflection-sheet-single .modal-body .tab-container .right {
         padding: 20px;
     }
-    .coach-workstation .full-view .right-content .tab-content .reports table tbody tr td input[type="range"]{
+
+    .coach-workstation .full-view .right-content .tab-content .reports table tbody tr td input[type="range"] {
         width: 80px;
     }
-    
+
     .coach-workstation #payment-single .dashboard .item-name {
         font-size: 12px;
     }
@@ -888,5 +1048,389 @@
     .coach-workstation #payment-single .top-section .batch .batch-time h4,
     .coach-workstation #payment-single .top-section .course .course-name h4 {
         font-size: 10px;
+    }
+
+    .chat-page .chat-container {
+        width: 100%;
+        overflow-y: auto;
+    }
+
+    .chat-page .chat-container .all-chats {
+        width: 100%;
+    }
+
+    .chat-page .chat-container .chat-details {
+        width: 100%;
+        position: unset;
+    }
+
+    .chat-page .chat-container .all-chats .create-new {
+        font-size: 11px;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .chatter .text h3 {
+        white-space: nowrap;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link {
+        gap: 40px;
+    }
+
+    .chat-page {
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .chatter .text p {
+        height: 18px;
+        font-size: 9px;
+    }
+
+    .chat-page .chat-container .all-chats .nav-item .nav-link .date {
+        font-size: 9px;
+        white-space: nowrap;
+    }
+
+    .chat-page .chat-container .chat-details .tab-pane .group-header .details .members {
+        display: none;
+    }
+
+    .chat-page .chat-container .chat-details .tab-pane .group-header .profile .text h4 {
+        white-space: nowrap;
+        width: 100px;
+    }
+
+    .chat-page .chat-container .chat-details .tab-pane .group-header {
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .chat-page .chat-container .chat-details .tab-pane .chat-area {
+        width: 330px;
+    }
+
+    .assignment-page {
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+
+    .assignment-page .title h2 {
+        font-size: 19px;
+    }
+
+    .assignment-page .modal-body {
+        flex-direction: column;
+    }
+
+    .assignment-page .modal-body .left {
+        width: 100%;
+    }
+
+    .assignment-page .modal-body .right {
+        width: 100%;
+    }
+
+    .assignment-page .modal-body .left .video-scroller {
+        padding: 10px;
+    }
+
+    .assignment-page .modal-body .left .video-scroller .videos .profile-description .text .title span {
+        font-size: 12px;
+    }
+
+    .assignment-page .modal-body .left .video-scroller .videos .profile-description .text .title {
+        font-size: 13px;
+    }
+
+    .coach-workstation .title {
+        gap: 5px;
+    }
+
+    .assignment-page .site-btn-outline-info {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .assignment-page .site-btn-success {
+        padding-left: 2rem !important;
+        padding-right: 2rem !important;
+    }
+
+    .assignment-page .tab-section .nav-pills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .assignment-page .tab-section .nav-pills .nav-item p {
+        font-size: 12px;
+    }
+
+    .assignment-page .tab-section .nav-pills .nav-item .nav-link {
+        padding: 15px;
+    }
+
+    .assignment-page .contents .tab-pane .select-buttons .selects {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .assignment-page .contents .tab-pane .select-buttons {
+        flex-direction: column;
+    }
+
+    .assignment-page .contents .tab-pane .select-buttons a {
+        width: fit-content;
+        margin-top: 10px;
+    }
+
+    .assignment-page .contents .tab-pane table thead tr th {
+        font-size: 11px;
+    }
+
+    .assignment-page .contents .tab-pane table tbody tr td {
+        font-size: 11px;
+    }
+
+    .assignment-page .contents .tab-pane table tbody tr td .read {
+        font-size: 11px;
+        width: 80px;
+    }
+
+    .assignment-page .contents .tab-pane table tbody tr td .pending {
+        font-size: 11px;
+        width: 80px;
+    }
+
+    .assignment-page .contents .tab-pane table tbody tr td .profile p {
+        font-size: 11px;
+    }
+
+    .video-analyzer .tab-section .nav-pills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .video-analyzer {
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+
+    .video-analyzer .tab-section .nav-pills .nav-item .nav-link {
+        height: 120px;
+    }
+
+    .video-analyzer .contents .tab-pane .select-buttons .selects select {
+        padding: 6px 20px 6px 10px;
+        width: 50%;
+    }
+
+    .video-analyzer .contents .tab-pane .select-buttons .selects {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .video-analyzer .contents .tab-pane table tbody tr td .text {
+        width: 220px;
+    }
+    .video-analyzer .contents .tab-pane table tbody tr td .text p{
+        font-size: 12px;
+    }
+    .video-analyzer .contents .tab-pane table tbody tr td .status{
+        width: 90px;
+        font-size: 11px;
+    }
+    .video-analyzer #user-access .modal-body .selects{
+        flex-direction: column;
+    }
+    .video-analyzer #user-access .modal-body .selects .search{
+        width: 100%;
+    }
+    .video-analyzer #user-access .modal-body .selects select{
+        width: 100%;
+    }
+    .notification-page .full-container .tab-section .head :not(.item:first-child){
+        display: none;
+    }
+    .notification-page .full-container .tab-section .nav-pills .nav-item .nav-link .item:nth-child(2){
+        display: none;
+    }
+    .notification-page .full-container .tab-section .nav-pills .nav-item .nav-link .item:nth-child(3){
+        display: none;
+    }
+    .notification-page .full-container .tab-section .head{
+        padding: 10px;
+    }
+    .notification-page .full-container .tab-section .nav-pills .nav-item .nav-link{
+        padding: 10px;
+    }
+    .notification-page .full-container .tab-section{
+        width:32%;
+    }
+    .notification-page .full-container .contents{
+        width: 68%;
+    }
+    .notification-page{
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+    .notification-page .full-container .contents .body-content{
+        flex-direction: column;
+    }
+    .notification-page .full-container .contents .body-content .message{
+        width: 100%;
+    }
+    .notification-page .full-container .contents .head{
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+    .notification-page .full-container .contents .head .profile .text p{
+        font-size: 11px;
+    }
+    .notification-page .full-container .contents .head .profile img{
+        width: 25px;
+        height: 25px;
+    }
+    .notification-page .full-container .contents .head .counts{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .notification-page .full-container .contents .head .counts p{
+        margin-bottom: 0;
+    }
+    .notification-page .full-container .contents .body-content .message{
+        padding: 10px;
+    }
+    .notification-page .full-container .tab-section .nav-pills .nav-item {
+        width: 100%;
+    }
+    .notification-page .full-container .contents .body-content .tables{
+        width: 100%;
+    }
+    .notification-page .search-button .search{
+        width: 100%;
+    }
+    .notification-page .search-button{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .notification-page .search-button a{
+        width: 60%;
+    }
+    .send-notification-page{
+        padding: 1.5rem 1rem 1.5rem 1rem;
+    }
+    .send-notification-page .profile-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .send-notification-page .title a{
+        margin-top:20px;
+    }
+    .send-notification-page .inputs{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .send-notification-page .inputs label{
+        width: 100% !important;
+    }
+    .send-notification-page .select-links{
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+    }
+    .send-notification-page .select-links .first{
+        justify-content: space-between;
+    }
+    .send-notification-page .select-links .first select{
+        width: 60%;
+    }
+    .send-notification-page .bottom-buttons{
+        margin-top: 50px;
+    }
+    .dream-text{
+        display: none;
+    }
+    .course-main .table-container{
+        padding-left: 0px;
+    }
+    .course-main .table-container table thead tr th{
+        font-size: 11px;
+    }
+    .course-main .table-container table tbody tr td .profile p{
+        font-size: 11px;
+    }
+    .course-main .table-container table tbody tr td{
+        font-size: 11px;
+        padding: 6px;
+    }
+    .course-main .table-container table tbody tr td p.paid{
+        font-size: 11px;
+    }
+    .course-main .table-container table tbody tr td p.partially-paid{
+        font-size: 11px;
+        padding: 3px 5px;
+    }
+    .login-page{
+        flex-direction: column;
+    }
+    .login-page .left{
+        width:100%;
+        height: 80vh;
+        padding-left: 25px;
+    }
+    .login-page .left h3{
+        font-size: 30px;
+    }
+    .login-page .left h2{
+        font-size: 60px;
+    }
+    .login-page .left p{
+        font-size: 18px;
+        line-height: 25px;
+    }
+    .login-page .right{
+        width:100%;
+    }
+    .login-page .right{
+        padding: 20px 25px;
+    }
+    .login-page .right img{
+        margin-bottom: 20px;
+    }
+    .register-page{
+        flex-direction: column;
+    }
+    .register-page .left{
+        width: 100%;
+    }
+    .register-page .right{
+        width: 100%;
+    }
+    .register-page .right h2{
+        font-size: 25px;
+    }
+    .register-page .right h2 a img{
+        width:24px;
+    }
+    .register-page {
+        overflow-y: auto;
+    }
+    .register-page .right .content .inputs{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .register-page .right .content .password .pass label{
+        font-size: 13px;
+    }
+    .register-page .right .content .password .pass-container{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .register-page .right .content .password .pass{
+        width: 100%;
+    }
+    .register-page .right .content .password .pass-container .details{
+        width: 100%;
+        align-items: start;
+    }
+    .register-page .right .content .conditions{
+        margin-top: 30px !important;
+    }
+    .course-main .nav-pills .nav-link {
+        padding: 10px;
     }
 }
